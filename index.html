@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vikinthan's Blog </title>
+
+  <!-- Website CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <div class="logo">
+      <img src="images/logo.png" alt="School Blog Logo">
+      <div>
+        <h1 id="siteTitle">Our School Blog</h1>
+        <p id="siteDescription">
+          Learning, Sharing and Growing Together
+        </p>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+
+    <a href="#home">Home</a>
+    <a href="#blog">Blog Posts</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#admin">Admin Center 🔐</a>
+
+  </nav>
+
+  <!-- HOMEPAGE -->
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="hero-content">
+
+        <h2>Welcome to Our School Blog!</h2>
+
+        <p>
+          Discover school news, student projects,
+          learning tips and exciting activities.
+        </p>
+
+        <a href="#blog" class="primary-button">
+          Explore Blog
+        </a>
+
+      </div>
+
+      <img
+        src="images/banner.jpg"
+        alt="School Blog Banner"
+        class="hero-image"
+      >
+
+    </section>
+
+    <!-- BLOG POSTS -->
+    <section class="container" id="blog">
+
+      <h2>Latest Blog Posts</h2>
+
+      <p>
+        Read our latest news, stories and updates.
+      </p>
+
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Search blog posts..."
+        aria-label="Search blog posts"
+      >
+
+      <div id="categoryFilters"></div>
+
+      <div
+        id="blogPosts"
+        class="blog-grid"
+      >
+
+        <!-- JavaScript loads blog posts here -->
+
+        <p>Loading blog posts...</p>
+
+      </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section class="container about" id="about">
+
+      <h2>About Our Blog</h2>
+
+      <p id="aboutText">
+        Our School Blog is a place to share ideas,
+        celebrate achievements and discover new things.
+      </p>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="container contact" id="contact">
+
+      <h2>Contact Us</h2>
+
+      <p>
+        Have an idea for a blog post?
+        Speak to your teacher about contributing.
+      </p>
+
+    </section>
+
+    <!-- ADMIN CENTER -->
+    <section class="container admin-section" id="admin">
+
+      <h2>🔐 Admin Center</h2>
+
+      <p>
+        Website administration and blog management.
+      </p>
+
+      <!-- LOGIN -->
+      <div id="adminLogin" class="admin-panel">
+
+        <h3>Administrator Login</h3>
+
+        <form id="loginForm">
+
+          <label for="adminPassword">
+            Admin Password
+          </label>
+
+          <input
+            type="password"
+            id="adminPassword"
+            placeholder="Enter your password"
+            required
+          >
+
+          <button type="submit">
+            Login
+          </button>
+
+        </form>
+
+        <p id="loginMessage"></p>
+
+      </div>
+
+      <!-- DASHBOARD -->
+      <div id="adminDashboard" hidden>
+
+        <div class="admin-toolbar">
+
+          <h3>Admin Dashboard</h3>
+
+          <button id="logoutButton">
+            Logout
+          </button>
+
+        </div>
+
+        <!-- WEBSITE SETTINGS -->
+        <div class="admin-panel">
+
+          <h3>Website Settings</h3>
+
+          <form id="settingsForm">
+
+            <label for="editSiteTitle">
+              Website Title
+            </label>
+
+            <input
+              type="text"
+              id="editSiteTitle"
+              required
+            >
+
+            <label for="editSiteDescription">
+              Website Description
+            </label>
+
+            <textarea
+              id="editSiteDescription"
+            ></textarea>
+
+            <label for="editAboutText">
+              About Section
+            </label>
+
+            <textarea
+              id="editAboutText"
+            ></textarea>
+
+            <button type="submit">
+              Save Settings
+            </button>
+
+          </form>
+
+        </div>
+
+        <!-- CREATE POST -->
+        <div class="admin-panel">
+
+          <h3 id="postFormHeading">
+            Create New Blog Post
+          </h3>
+
+          <form id="postForm">
+
+            <label for="postTitle">
+              Post Title
+            </label>
+
+            <input
+              type="text"
+              id="postTitle"
+              placeholder="Enter post title"
+              required
+            >
+
+            <label for="postCategory">
+              Category
+            </label>
+
+            <select id="postCategory">
+
+              <option value="School News">
+                School News
+              </option>
+
+              <option value="Learning">
+                Learning
+              </option>
+
+              <option value="Technology">
+                Technology
+              </option>
+
+              <option value="Activities">
+                Activities
+              </option>
+
+              <option value="Science">
+                Science
+              </option>
+
+              <option value="Other">
+                Other
+              </option>
+
+            </select>
+
+            <label for="postContent">
+              Blog Content
+            </label>
+
+            <textarea
+              id="postContent"
+              placeholder="Write your blog post..."
+              required
+            ></textarea>
+
+            <label for="postFiles">
+              Upload Images or Files
+            </label>
+
+            <input
+              type="file"
+              id="postFiles"
+              multiple
+              accept="image/*,.pdf,.txt,.doc,.docx"
+            >
+
+            <div id="uploadPreview"></div>
+
+            <button type="submit">
+              Save Blog Post
+            </button>
+
+            <button
+              type="button"
+              id="cancelEditButton"
+            >
+              Cancel
+            </button>
+
+          </form>
+
+        </div>
+
+        <!-- MANAGE POSTS -->
+        <div class="admin-panel">
+
+          <h3>Manage Blog Posts</h3>
+
+          <div id="managePosts">
+
+            <!-- Admin posts load here -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <h3>Our School Blog</h3>
+
+    <p>
+      Learning, Sharing and Growing Together.
+    </p>
+
+    <p>
+      © 2026 Our School Blog. All rights reserved.
+    </p>
+
+  </footer>
+
+  <!-- JAVASCRIPT FILES -->
+  <script src="js/posts.js" defer></script>
+  <script src="js/admin.js" defer></script>
+  <script src="js/app.js" defer></script>
+
+</body>
+</html>
